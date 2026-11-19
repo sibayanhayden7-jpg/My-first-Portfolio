@@ -1,0 +1,372 @@
+
+
+/* Desktop glass navigation */
+@media screen and (min-width: 901px) {
+
+    #hamburger-nav {
+        display: none;
+    }
+
+    #desktop-nav {
+        position: fixed;
+        top: 20px;
+        left: 5%;
+        width: 90%;
+        height: 70px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 30px;
+
+        background: rgba(23, 23, 23, 0.82);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 18px;
+
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+
+        z-index: 1000;
+        transition:
+            background 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
+    }
+
+    #desktop-nav .logo,
+    #desktop-nav .nav-links a {
+        color: #F5F1EA;
+    }
+
+    #desktop-nav .nav-links a:hover {
+        color: #F39A62;
+    }
+}
+
+/* Hamburger navigation (tablets and phones) */
+@media screen and (max-width: 900px) {
+
+    #desktop-nav {
+        display: none;
+    }
+
+    #hamburger-nav {
+        display: flex;
+        left: 4%;
+        width: 92%;
+        padding: 0 18px;
+        height: 62px;
+        top: 12px;
+        border-radius: 15px;
+    }
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.hamburger-menu {
+    position: relative;
+}
+
+.hamburger-icon {
+    background: none;
+    border: none;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-links {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 180px;
+
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 10px;
+
+    display: none;
+    flex-direction: column;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+}
+
+.menu-links.open {
+    display: flex;
+}
+
+.menu-links a {
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.menu-links a:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================
+   1024px: SMALL LAPTOPS / LANDSCAPE TABLETS
+========================= */
+
+@media screen and (max-width: 1024px) {
+
+    /* Project carousel: two cards at a time */
+    .project-card {
+        flex: 0 0 calc((100% - 25px) / 2);
+    }
+
+    /* Footer */
+    footer {
+        padding: 50px 5% 25px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+
+/* =========================
+   900px: SMALL TABLETS
+========================= */
+
+@media screen and (max-width: 900px) {
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer: intro spans the full row, links sit side by side below */
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+
+    .footer-container p {
+        max-width: none;
+    }
+}
+
+
+/* =========================
+   SMALL TABLETS ONLY (601px to 900px)
+========================= */
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+
+    /* Avoid a lonely third box on its own half-width row */
+    .skills-box:last-child {
+        grid-column: 1 / -1;
+    }
+
+    /* Hero: a step between desktop and phone sizing */
+    #profile {
+        padding: 90px 5% 60px;
+    }
+
+    .profile-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .title {
+        font-size: 3.4rem;
+    }
+}
+
+
+/* =========================
+   600px: PHONES
+========================= */
+
+@media screen and (max-width: 600px) {
+
+    nav {
+        padding: 0 5%;
+    }
+
+    section {
+        padding: 50px 3%;
+    }
+
+
+    /* HERO */
+
+    #profile {
+        min-height: calc(100vh - 70px);
+        padding: 60px 20px;
+    }
+
+    .profile-image {
+        width: 190px;
+        height: 190px;
+        font-size: 1.5rem;
+    }
+
+    .title {
+        font-size: 2.8rem;
+    }
+
+    .section-text-p2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        max-width: 180px;
+        max-height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+
+    /* ABOUT */
+
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* SKILLS */
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* PROJECT CAROUSEL: one card at a time */
+
+    .carousel-wrap {
+        gap: 8px;
+    }
+
+    .projects-container {
+        gap: 16px;
+    }
+
+    .project-card {
+        flex: 0 0 100%;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-buttons {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .project-btn {
+        min-width: 0;
+    }
+
+
+    /* CONTACT */
+
+    .contact-container {
+        gap: 25px;
+    }
+
+    .contact-form {
+        padding: 25px 20px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding-bottom: calc(25px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+
+/* =========================
+   FOOTER: ALL SIZES
+   (overrides for shrinking columns and long email text)
+========================= */
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Lets grid columns shrink below the email's width */
+.footer-container > div {
+    min-width: 0;
+}
+
+.footer-socials a,
+.email {
+    overflow-wrap: anywhere;
+}
+
+/* The safe-area inset is handled once, on the footer at 600px */
+.footer-bottom {
+    padding-bottom: 0;
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}

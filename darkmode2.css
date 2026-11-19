@@ -1,0 +1,365 @@
+/* =====================================================
+   DARKMODE.CSS
+   Organized in the same order as the page:
+   1. Page base
+   2. Navigation
+   3. Hero (#profile)
+   4. Shared buttons
+   5. About
+   6. Skills
+   7. Projects
+   8. Contact
+   9. Footer
+   10. Misc
+
+   Within each section: light-mode rules first,
+   then the body.dark-theme overrides.
+===================================================== */
+
+
+/* =====================================================
+   1. PAGE BASE
+===================================================== */
+
+body.dark-theme {
+    background: #121212;
+    background-image: none;
+    color: #ffffff;
+}
+
+body.dark-theme section {
+    background: #121212;
+}
+
+body.dark-theme p {
+    color: #b5b5b5;
+}
+
+
+/* =====================================================
+   2. NAVIGATION
+===================================================== */
+
+body.dark-theme nav {
+    background: #121212;
+}
+
+/* Theme toggle switch */
+body.dark-theme #desktop-nav .theme,
+body.dark-theme #hamburger-nav .theme {
+    background: var(--orange);
+}
+
+body.dark-theme .theme span {
+    transform: translateX(30px);
+    background: var(--charcoal);
+}
+
+/* Mobile menu */
+body.dark-theme .hamburger-menu {
+    background: #121212;
+}
+body.dark-theme .hamburger-icon {
+    color: var(--orange);
+}
+
+body.dark-theme .menu-links {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-theme .menu-links a {
+    color: #ffffff;
+    background: transparent;
+}
+
+body.dark-theme .menu-links a:hover {
+    color: var(--orange);
+}
+
+body.dark-theme .menu-links .active {
+    color: #b5b5b5;
+}
+
+body.dark-theme .menu-links .active:hover {
+    color: #ffffff;
+}
+
+body.dark-theme .menu-links .active::after {
+    background: #b5b5b5;
+}
+
+
+/* =====================================================
+   3. HERO (#profile)
+===================================================== */
+
+/* Light mode */
+#profile {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--text-dark);
+}
+
+#profile .section-text-p1,
+#profile .section-text-p2 {
+    color: var(--orange);
+}
+
+.hero-description {
+    color: #555555;
+}
+
+/* Keep hero content above the Vanta animation */
+#profile .profile-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Keep the animation behind the text and buttons */
+#profile .vanta-canvas {
+    position: absolute !important;
+    inset: 0;
+    z-index: 0 !important;
+    pointer-events: none;
+}
+
+/* Hide the animation for visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    #profile .vanta-canvas {
+        display: none;
+    }
+}
+
+/* Dark mode */
+body.dark-theme #profile {
+    background: var(--charcoal);
+    color: var(--cream);
+}
+
+body.dark-theme #profile .title {
+    color: var(--text-light);
+}
+
+body.dark-theme #profile .section-text-p1,
+body.dark-theme #profile .section-text-p2 {
+    color: #F39A62;
+}
+
+body.dark-theme #profile .hero-description {
+    color: var(--text-light);
+}
+
+
+/* =====================================================
+   4. SHARED BUTTONS
+   (hero buttons and the contact form button)
+   Keep text light so it stays readable in dark mode.
+===================================================== */
+
+body.dark-theme .btn-color-1 {
+    background: #1e1e1e;
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-theme .btn-color-2 {
+    background: #1e1e1e;
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-theme .btn-color-2:hover {
+    background: #333;
+}
+
+
+/* =====================================================
+   5. ABOUT
+===================================================== */
+
+/* Light mode */
+#about {
+    background: #E8E2D8;
+}
+
+#about .section-text-p1 {
+    color: var(--orange);
+}
+
+.info-card {
+    background: var(--cream);
+    border-color: #D5CEC3;
+}
+
+/* Dark mode */
+body.dark-theme .about-text p {
+    color: var(--charcoal);
+}
+
+body.dark-theme .info-card {
+    background: #1e1e1e;
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-theme .info-card:hover {
+    background: #333;
+}
+
+
+/* =====================================================
+   6. SKILLS
+===================================================== */
+
+body.dark-theme .skills-box {
+    background: #1e1e1e;
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-theme .skills-box:hover {
+    background: #333;
+}
+
+body.dark-theme .skills-box h3 {
+    color: var(--orange);
+    transition: none;
+}
+
+
+/* =====================================================
+   7. PROJECTS
+===================================================== */
+
+body.dark-theme .project-card {
+    background: #1e1e1e;
+    color: #ffffff;
+    border-color: #333;
+}
+
+body.dark-theme .project-tags span {
+    border-color: #444;
+    color: #d6d3d1;
+}
+
+body.dark-theme .project-btn {
+    background: #1e1e1e;
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-theme .project-btn:hover {
+    background: #333;
+}
+
+
+/* =====================================================
+   8. CONTACT
+===================================================== */
+
+/* Light mode */
+#contact {
+    background: var(--orange);
+    color: white;
+}
+
+#contact .section-text-p1 {
+    color: #FFE1CF;
+}
+
+#contact .contact-info > p {
+    color: #FFF0E7;
+}
+
+.contact-form {
+    background: var(--cream);
+    border: none;
+}
+
+/* Dark mode */
+body.dark-theme .contact-form {
+    background: #1e1e1e;
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea {
+    background: #2c2c2c;
+    color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-theme .contact-form input:focus,
+body.dark-theme .contact-form textarea:focus {
+    border-color: #888;
+}
+
+body.dark-theme .contact-form label {
+    color: var(--text-light);
+}
+
+/* =====================================================
+   9. FOOTER
+===================================================== */
+
+
+/* Dark mode */
+body.dark-theme footer {
+    background: #121212;
+    color: #ffffff;
+}
+
+body.dark-theme .footer-links,
+body.dark-theme .footer-socials {
+    color: #b5b5b5;
+}
+
+body.dark-theme .footer-links a {
+    color: #b5b5b5;
+}
+
+body.dark-theme .footer-links a:hover {
+    color: #E87532;
+    transition: color 0.2s ease;
+}
+
+body.dark-theme .footer-socials a:hover {
+    color: #ffffff;
+}
+
+body.dark-theme .footer-bottom {
+    color: #b5b5b5;
+}
+
+body.dark-theme .footer-container h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 36px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--orange);
+    transition: width 0.3s ease;
+}
+
+/* =====================================================
+   10. MISC
+===================================================== */
+
+.social-icon {
+    width: 5rem;
+    height: 5rem;
+}
+
+body.dark-theme .social-icon {
+    filter: invert(1);
+}
+
+.email {
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+}

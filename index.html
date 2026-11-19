@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Hayden Sibayan | Web Developer</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="darkmode2.css">
+    <link rel="stylesheet" href="mediaqueries2.css">
+     <script src="script.js" defer></script>
+
+    <!-- Interactive 3D background libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="desktop-nav">
+        <div class="logo">Hayden Sibayan</div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <button id="theme-toggle" class="toggle theme" role="switch" aria-label="Toggle theme">
+                <span id="theme-icon"></span>
+            </button>
+        </ul>
+    </nav>
+
+    <!-- MOBILE NAVIGATION -->
+    <nav id="hamburger-nav">
+        <div class="logo">
+            <a href="#">HS</a>
+        </div>
+
+        <div class="hamburger-menu">
+            <button class="hamburger-icon" onclick="toggleMenu()">
+                ☰
+            </button>
+
+            <div class="menu-links">
+                <a href="#about" onclick="toggleMenu()">About</a>
+                <a href="#skills" onclick="toggleMenu()">Skills</a>
+                <a href="#projects" onclick="toggleMenu()">Projects</a>
+                <a href="#contact" onclick="toggleMenu()">Contact</a>
+                <button id="theme-toggle-mobile" class="toggle theme" role="switch" aria-label="Toggle theme">
+                    <span id="theme-icon-mobile"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section id="profile">
+
+        <div class="profile-content">
+
+                <img src="images/Hpfp.png" class="profile-image">
+
+            <p class="section-text-p1">
+                Hello, I'm
+            </p>
+
+            <h1 class="title">
+                Hayden Sibayan
+            </h1>
+
+            <p class="section-text-p2">
+                Web Developer
+            </p>
+
+            <p class="hero-description">
+             Move cursor/finger to interact with 3d Background
+            </p>
+
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="location.href='#projects'">
+                    View My Work ↓
+                </button>
+
+                <button class="btn btn-color-1" onclick="location.href='#contact'">
+                    Get In Touch
+                </button>
+            </div>
+
+            <div class="socials">
+                <a href="#" aria-label="GitHub">GitHub</a>
+                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                <a href="#contact" aria-label="Email">Email</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <p class="section-text-p1">Get To Know Me</p>
+        <h2 class="section-title">About Me</h2>
+
+        <p class="section-description">
+            I'm a passionate web developer who enjoys building
+            practical and modern digital experiences.
+        </p>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+                    My journey into web development started with
+                    curiosity about how websites work behind the scenes.
+                    Since then, I've been learning how to turn ideas
+                    into functional and responsive websites.
+                </p>
+
+                <p>
+                    I focus very closely on a code that is clean, maintainable and efficient, ensuring readability if someone else wants to do something with it in the future. this is important to me because i want to make sure some of these works can be updated but still maintain the same functionality.
+                </p>
+
+                <p>
+                    I'm particularly interested in creating websites
+                    that are simple to use, visually clean and
+                    responsive across different devices.
+                </p>
+
+            </div>
+
+
+            <div class="about-cards">
+
+                <div class="info-card">
+                    <div class="card-icon">&lt;/&gt;</div>
+
+                    <h3>Frontend Development</h3>
+
+                    <p>
+                        HTML, CSS, JavaScript and responsive
+                        web design.
+                    </p>
+                </div>
+
+
+                <div class="info-card">
+                    <div class="card-icon">▣</div>
+
+                    <h3>Backend Development</h3>
+
+                    <p>
+                        Server-side development, databases
+                        and APIs.
+                    </p>
+                </div>
+
+
+                <div class="info-card">
+                    <div class="card-icon">☁</div>
+
+                    <h3>Web Technologies</h3>
+
+                    <p>
+                        Modern tools and technologies for
+                        building web applications.
+                    </p>
+                </div>
+
+
+                <div class="info-card">
+                    <div class="card-icon">◆</div>
+
+                    <h3>Problem Solving</h3>
+
+                    <p>
+                        Breaking complicated problems into
+                        manageable solutions.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <p class="section-text-p1">What I Work With</p>
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skills-box">
+
+                <h3>Frontend</h3>
+
+                <div class="skills-list">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Responsive Design</span>
+                </div>
+
+            </div>
+
+
+            <div class="skills-box">
+
+                <h3>Backend</h3>
+
+                <div class="skills-list">
+                    <span>PHP</span>
+                    <span>Databases</span>
+                </div>
+
+            </div>
+
+
+            <div class="skills-box">
+
+                <h3>Tools</h3>
+
+                <div class="skills-list">
+                    <span>VS Code</span>
+                    <span>Figma</span>
+                    <span>Xampp</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+    <p class="section-text-p1">Browse My Recent</p>
+    <h2 class="section-title">Projects</h2>
+
+    <div class="carousel-wrap">
+
+        <button id="prevBtn" class="carousel-btn" aria-label="Previous project">‹</button>
+
+        <div class="projects-container">
+
+            <!-- 1 -->
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="images/project1.png" alt="Buzzmedia website screenshot">
+                </div>
+                <div class="project-content">
+                    <h3>Buzzmedia Website</h3>
+                    <p>A responsive website for a media company, showcasing their services and portfolio. Built with HTML, CSS and JavaScript.</p>
+                    <div class="project-tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="#" class="project-btn">GitHub</a>
+                        <a href="https://haydensibayan.infinityfree.io/digitalbuzz/index.html#sectionHeader" class="project-btn" target="_blank" rel="noopener noreferrer">Website link</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="images/project2.png" alt="Teachers information system screenshot">
+                </div>
+                <div class="project-content">
+                    <h3>Teachers Information Management System</h3>
+                    <p>A web application for managing teacher information, including personal details, subjects taught and schedules.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span><span>API</span><span>CSS</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="#" class="project-btn">Background</a>
+                        <a href="#" class="project-btn">Website link</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="images/project3.png" alt="Abe Restaurant website screenshot">
+                </div>
+                <div class="project-content">
+                    <h3>Abe Restaurant Website</h3>
+                    <p>A responsive website for a restaurant, showcasing their menu, services and contact information.</p>
+                    <div class="project-tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="#" class="project-btn">GitHub</a>
+                        <a href="https://haydensibayan.infinityfree.io/abe/index.html" class="project-btn" target="_blank" rel="noopener noreferrer">Website link</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="images/project4.png" alt="Makeshift projects photo">
+                </div>
+                <div class="project-content">
+                    <h3>Beyond Coding projects or hobbies</h3>
+                    <p>My hobby of turning objects into usable tools, such as knives and fishing rods, which relies on my own problem-solving skills.</p>
+                    <div class="project-tags">
+                        <span>Blacksmithing</span><span>Recycling</span><span>Improvisation</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="#" class="project-btn">Check it out</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <button id="nextBtn" class="carousel-btn" aria-label="Next project">›</button>
+
+    </div>
+</section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <p class="section-text-p1">Get In Touch</p>
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Let's work together</h3>
+
+                <p>
+                    Have a project, idea or question?
+                    Feel free to reach out.
+                </p>
+
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <input type="email" placeholder="youremail@example.com">
+                </div>
+
+                <div class="contact-item">
+                    <strong>Location</strong>
+                    <input type="text" placeholder="City, Country">
+                </div>
+
+            </div>
+
+
+            <form class="contact-form">
+
+                <label for="name" class="form-label">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your name"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your email"
+                    required
+                >
+
+                <label for="message">Message</label>
+                <textarea
+                    id="message"
+                    rows="6"
+                    placeholder="Tell me about your project..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="submit-btn">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+                <h3>What i want</h3>
+
+                <p>
+                    I'm a eager and project hungry full stack developer, i really need a first project from you, to unleash my skills and show you what i can do.
+                </p>
+            </div>
+
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3>Connect</h3>
+
+                <div class="footer-socials">
+                    <a href="https://dev.to/hayden_sibayan_8bb60c8c40" target="_blank" rel="noopener noreferrer">
+                       <img src="images/devcom.png" width="37px">
+                    </a>
+                    <a href="mailto:sibayanhayden7@gmail.com" rel="noopener noreferrer">
+                        <P class="email">sibayanhayden7@gmail.com</P>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="year"></span> Hayden Sibayan.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+   
+</body>
+</html>
