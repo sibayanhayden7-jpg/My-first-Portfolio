@@ -196,7 +196,7 @@ body.dark-theme .btn-color-2:hover {
 
 /* Dark mode */
 body.dark-theme .about-text p {
-    color: var(--charcoal);
+    color: #b5b5b5;
 }
 
 body.dark-theme .info-card {
@@ -302,6 +302,14 @@ body.dark-theme .contact-form label {
     color: var(--text-light);
 }
 
+body.dark-theme .form-status.ok    { color: #6fd08c; }
+body.dark-theme .form-status.error { color: #ff8a7a; }
+
+/* The contact section's orange background stays in dark mode: keep its text light */
+body.dark-theme .contact-info h3 {
+    color: #ffffff;
+}
+
 /* =====================================================
    9. FOOTER
 ===================================================== */
@@ -362,4 +370,32 @@ body.dark-theme .social-icon {
 
 .email {
     font-size: clamp(0.85rem, 3.5vw, 1rem);
+}
+
+
+/* =====================================================
+   11. DARK MODE CONTRAST FIXES
+===================================================== */
+
+body.dark-theme #about {
+    background: #181818;
+}
+
+body.dark-theme #about .section-description,
+body.dark-theme .section-description {
+    color: #b5b5b5;
+}
+
+body.dark-theme .skills-list span {
+    background: #2c2c2c;
+    color: #f5f1ea;
+    border-color: #444;
+}
+
+body.dark-theme .section-title {
+    color: #e5e5e5;
+}
+
+body.dark-theme #contact .section-title {
+    color: #ffffff;
 }

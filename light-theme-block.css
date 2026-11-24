@@ -1,0 +1,119 @@
+/* =====================================================
+   LIGHT MODE: ONE CONSISTENT PALETTE
+   Paste at the very END of styles.css.
+   Every rule starts with body:not(.dark-theme), so dark mode is untouched.
+   Change a color once in the variables below and it updates everywhere.
+===================================================== */
+
+body:not(.dark-theme) {
+    --bg-main:     #F5F1EA;   /* cream: hero, skills */
+    --bg-alt:      #E8E2D8;   /* beige: about, projects */
+    --card-bg:     #FFFFFF;
+    --card-border: #D9D1C3;
+    --heading:     #171717;   /* charcoal */
+    --body-text:   #535151;
+    --accent:      #E87532;   /* your orange */
+    --accent-dark: #B34A12;   /* orange for text on cream/beige (readable) */
+
+    background: var(--bg-main);
+    color: var(--body-text);
+}
+
+/* ---------- Section backgrounds: cream / beige / cream / beige / orange / charcoal ---------- */
+body:not(.dark-theme) #profile,
+body:not(.dark-theme) #skills   { background: var(--bg-main); }
+
+body:not(.dark-theme) #about,
+body:not(.dark-theme) #projects { background: var(--bg-alt); }
+
+body:not(.dark-theme) #contact  { background: var(--accent); }
+
+body:not(.dark-theme) footer {
+    background: var(--heading);
+    border-top: none;
+}
+
+/* ---------- Headings and text ---------- */
+body:not(.dark-theme) .title,
+body:not(.dark-theme) .section-title,
+body:not(.dark-theme) .skills-box h3,
+body:not(.dark-theme) .info-card h3,
+body:not(.dark-theme) .project-content h3 { color: var(--heading); }
+
+body:not(.dark-theme) :is(#profile, #about, #skills, #projects) .section-text-p1 {
+    color: var(--accent-dark);
+}
+
+body:not(.dark-theme) :is(
+    .section-text-p2,
+    .hero-description,
+    .section-description,
+    .about-text p,
+    .info-card p,
+    .project-content p
+) { color: var(--body-text); }
+
+/* ---------- Cards: always lighter than the section behind them ---------- */
+body:not(.dark-theme) .info-card {
+    background: var(--bg-main);
+    border: 1px solid var(--card-border);
+}
+
+body:not(.dark-theme) .skills-box,
+body:not(.dark-theme) .project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+}
+
+body:not(.dark-theme) .project-card:hover { border-color: var(--accent); }
+
+body:not(.dark-theme) .skills-list span {
+    background: var(--bg-main);
+    border: 1px solid var(--card-border);
+    color: var(--heading);
+}
+
+body:not(.dark-theme) .skills-container :hover { color: var(--accent-dark); }
+
+body:not(.dark-theme) .project-tags span {
+    border: 1px solid var(--card-border);
+    color: var(--body-text);
+}
+
+/* ---------- Hero: remove the leftover blue ---------- */
+body:not(.dark-theme) .btn {
+    background: var(--heading);
+    border-color: var(--heading);
+    color: #ffffff;
+}
+
+body:not(.dark-theme) .socials { color: var(--heading); }
+body:not(.dark-theme) .socials a:hover { color: var(--accent-dark); }
+
+body:not(.dark-theme) .profile-image {
+    background: linear-gradient(135deg, var(--heading), var(--accent));
+}
+body:not(.dark-theme) .profile-image:hover {
+    background: linear-gradient(135deg, var(--accent), var(--heading));
+}
+
+/* ---------- Contact (orange): charcoal for small text so it is readable ---------- */
+body:not(.dark-theme) #contact .contact-info > p,
+body:not(.dark-theme) #contact .contact-item strong,
+body:not(.dark-theme) #contact .contact-item span { color: var(--heading); }
+
+/* ---------- Footer (charcoal) ---------- */
+body:not(.dark-theme) .footer-container h3 { color: var(--accent); }
+body:not(.dark-theme) .footer-container h3::after { background: var(--accent); }
+
+body:not(.dark-theme) .footer-container p,
+body:not(.dark-theme) .footer-links,
+body:not(.dark-theme) .footer-socials { color: #d6d3d1; }
+
+body:not(.dark-theme) .footer-links a:hover,
+body:not(.dark-theme) .footer-socials a:hover { color: var(--accent); }
+
+body:not(.dark-theme) .footer-bottom {
+    color: #9a9a9a;
+    border-top-color: rgba(255, 255, 255, 0.15);
+}
