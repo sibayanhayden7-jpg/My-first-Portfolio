@@ -1,0 +1,8 @@
+# Block direct browsing of config and libraries; only send.php is reachable
+<FilesMatch "^config\.php$">
+    Require all denied
+</FilesMatch>
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+RedirectMatch 403 ^/contact/phpmailer/
