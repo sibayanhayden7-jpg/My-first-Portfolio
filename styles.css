@@ -1,8 +1,6 @@
 /* =========================
    GENERAL
 ========================= */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -33,7 +31,7 @@ section {
 }
 
 body {
-    font-family: 'space grotesk', sans-serif;
+    font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
     color: #111827;
     background: linear-gradient(135deg,#10131d 0%,#171B2B 50%,
         #211B35 100%);
@@ -72,7 +70,7 @@ nav {
 
     border-bottom: 1px solid #e5e7eb;
 
-    background: var(--charcoal-light);
+    background: rgba(23, 23, 23, 0.82);
 }
 
 
@@ -115,7 +113,6 @@ nav {
     background: rgba(232, 117, 50, 0.12);
     transform: translateY(-2px);
 }
-#dekstop-nav,
 #hamburger-nav {
     display: flex;
     position: fixed;
@@ -162,9 +159,8 @@ nav {
     cursor: pointer;
 
     transition:
-        background 0.3s ease, 
-        border-color 0.3s ease,
-       
+        background 0.3s ease,
+        border-color 0.3s ease;
 }
 
 #desktop-nav .theme:hover,
@@ -173,7 +169,7 @@ nav {
     transform: none;
 }
 
-#dekstop-nav .theme:focus-visible
+#desktop-nav .theme:focus-visible,
 #hamburger-nav .theme:focus-visible {
     outline: 2px solid var(--orange-light);
     outline-offset: 3px;
@@ -207,7 +203,7 @@ nav {
 ========================= */
 
 #profile {
-    min-height: calc(100vh -70px);
+    min-height: calc(100vh - 70px);
     padding: 110px 20px 60px;
 
     display: flex;
@@ -503,6 +499,59 @@ section > .section-text-p1 {
         color 0.25s ease;
 }
 
+/* Skill tiles */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+    gap: 12px;
+}
+
+.skill-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 92px;
+    padding: 14px 8px;
+
+    background: #F5F1EA;
+    border: 1px solid #D9D1C3;
+    border-radius: 14px;
+
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-title i {
+    font-size: 2rem;
+    line-height: 1;
+    font-style: normal;
+}
+
+.skill-title small {
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-align: center;
+    color: #171717;
+}
+
+.skill-title:hover {
+    transform: translateY(-4px);
+    border-color: #E87532;
+    box-shadow: 0 8px 20px rgba(232, 117, 50, 0.25);
+}
+
+/* Dark mode: dark tiles with a soft orange edge, like your reference */
+body.dark-theme .skill-title {
+    background: #1e1e1e;
+    border-color: rgba(232, 117, 50, 0.35);
+}
+body.dark-theme .skill-title small { color: #eeeeee; }
+body.dark-theme .skill-title:hover {
+    box-shadow: 0 0 18px rgba(232, 117, 50, 0.4);
+}
+
 
 /* =========================
    PROJECTS
@@ -548,8 +597,8 @@ section > .section-text-p1 {
 
     transition:
         transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.4s ease;
-        border-color: 0.3s ease;
+        box-shadow 0.4s ease,
+        border-color 0.3s ease;
 }
 
 .carousel-btn {
@@ -596,7 +645,7 @@ section > .section-text-p1 {
 
     box-shadow: 
     0 12px 24px rgba(0, 0, 0, 0.10),
-    0 5PX  14PX rgba(232, 117, 50, 0.12);
+    0 5px 14px rgba(232, 117, 50, 0.12);
 }
 
 
@@ -740,6 +789,33 @@ section > .section-text-p1 {
     max-width: 420px;
     line-height: 1.7;
 }
+
+.form-status {
+    margin-top: 14px;
+    padding: 0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease, padding 0.3s ease;
+}
+
+.form-status.success,
+.form-status.error,
+.form-status.loading {
+    max-height: 120px;
+    padding: 12px 14px;
+    opacity: 1;
+}
+
+.form-status.success { background: rgba(46, 160, 67, 0.18); color: #7ee08f; border: 1px solid #2ea043; }
+.form-status.error   { background: rgba(220, 53, 69, 0.18); color: #ff8a93; border: 1px solid #dc3545; }
+.form-status.loading { background: rgba(255, 255, 255, 0.08); color: #ddd; border: 1px solid #555; }
+
+.submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
 
 /*=========location and Email=======*/
 .contact-item {
@@ -913,7 +989,7 @@ section > .section-text-p1 {
 }
 
 .submit-btn:active {
-    transform: translate(1);
+    transform: translateY(0);
     box-shadow: none;
 }
 
@@ -926,79 +1002,239 @@ section > .section-text-p1 {
    FOOTER
 ========================= */
 
-footer {
-    border-top: 1px solid #e5e7eb;
-    padding: 60px 6% 25px;
-    display: block;
-    width: 100%;
-    background: var(--orange);
+/* =========================
+   FOOTER (card style)
+========================= */
+.site-footer {
+    padding: 40px 4% 50px;
+    background: #F5F1EA;
+    border-top: none;
 }
 
-.footer-container {
-    max-width: 1300%;
+.footer-shell {
+    max-width: 1300px;
     margin: 0 auto;
+    padding: 20px;
+    background: #FAF8F5;
+    border-radius: 28px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.footer-card {
+    padding: 50px 50px 24px;
+    background: #E87532;
+    border-radius: 24px;
+    color: #171717;
+}
+
+.footer-grid {
     display: grid;
-
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 2fr 1fr 1.4fr;
+    gap: 40px;
 }
 
-.footer-container h3 {
-    position: relative;
-    padding-bottom: 12px;
-    margin-bottom: 15px;
+.footer-cta h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: #171717;
+}
+
+.footer-cta p {
+    margin-bottom: 14px;
+    color: #171717;
+}
+
+.footer-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #171717;
+    color: #ffffff;
+    border-radius: 999px;
+    font-size: 0.95rem;
     font-weight: 500;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.footer-container > div{
-    min-width: 0;
+.footer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.footer-container h3::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 36px;
-    height: 3px;
-    border-radius: 2px;
-    background: var(--charcoal);
-    transition: width 0.3s ease;
+.footer-col h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #171717;
 }
 
-
-.footer-container p {
-    max-width: 350px;
-    line-height: 1.75;
-     color: rgba(23, 23, 23, 0.85)
-}
-
-.footer-links,
-.footer-socials {
-    overflow-wrap: anywhere;
+.footer-col ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    color: var(--charcoal);
-
-    transition: background 0.3s;
+    gap: 14px;
 }
 
+.footer-col li,
+.footer-col a {
+    font-size: 0.9rem;
+    color: #171717;
+    overflow-wrap: anywhere;
+}
 
-.footer-bottom {
-    max-width: 1300px;
+.footer-col a:hover {
+    text-decoration: underline;
+}
 
-    margin: 50px auto 0;
-    padding-top: 15px;
-
+.footer-copy {
+    margin-top: 40px;
+    padding-top: 16px;
     border-top: 1px solid rgba(23, 23, 23, 0.25);
-
-    display: flex;
-
-    justify-content: space-between;
-
-    color: var(--charcoal);
-
-    font-size: 0.85rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #171717;
 }
 
+/* Dark mode */
+body.dark-theme .site-footer { background: #121212; }
+body.dark-theme .footer-shell {
+    background: #1e1e1e;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .footer-card { padding: 30px 24px 20px; }
+}
+
+
+/* =========================
+   ENHANCEMENTS
+========================= */
+
+/* Skip link (keyboard users) */
+.skip-link {
+    position: fixed;
+    top: -60px;
+    left: 16px;
+    z-index: 2000;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: var(--orange);
+    color: #fff;
+    font-weight: 600;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+.projects-container:focus-visible {
+    outline: 2px solid var(--orange-light);
+    outline-offset: 3px;
+}
+
+/* Scroll reveal (script.js adds .reveal, then .visible when in view) */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Project cards keep their own hover transform once revealed */
+.project-card.reveal.visible:hover {
+    transform: translateY(-7px);
+}
+
+/* Active section link in the navigation (scroll-spy) */
+.nav-links a.active {
+    color: #F39A62;
+    background: rgba(232, 117, 50, 0.16);
+}
+
+.menu-links a.active {
+    color: var(--orange);
+    font-weight: 600;
+}
+
+/* Floating navbar gets a stronger shadow once the page scrolls */
+nav.scrolled {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero buttons are links now: keep them looking like buttons */
+a.btn {
+    display: inline-block;
+}
+
+/* Contact details (email is now a real mailto link) */
+.contact-item {
+    position: relative;
+}
+
+a.contact-item {
+    color: inherit;
+}
+
+.contact-item span {
+    color: #ffffff;
+    overflow-wrap: anywhere;
+}
+
+/* Contact form: honeypot field is hidden from people */
+.hp-field {
+    position: absolute !important;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.form-status {
+    margin: 14px 0 0;
+    font-size: 0.9rem;
+    min-height: 1.4em;
+}
+
+.form-status.ok    { color: #1f7a3d; }
+.form-status.error { color: #c0392b; }
+
+.submit-btn:disabled {
+    opacity: 0.65;
+    cursor: progress;
+}
+
+/* Invalid fields only get flagged after the visitor has touched them */
+.contact-form input:user-invalid,
+.contact-form textarea:user-invalid {
+    border-color: #c0392b;
+}
+
+/* Smooth text rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Contrast fixes ---- */
+.btn {
+    color: #ffffff;
+}
+
+#contact .section-title {
+    color: #ffffff;
+}
+
+.skills-list span {
+    color: #171717;
+}
